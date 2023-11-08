@@ -1,0 +1,28 @@
+{
+  "name": "foodapp",
+  "version": "1.0.0",
+  "description": "online food app",
+  "scripts": {
+    "test": "jest",
+    "start": "npx parcel index.html",
+    "build": "npx parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anushree93/namaste-foodApp.git"
+  },
+  "author": "Anushree",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anushree93/namaste-foodApp/issues"
+  },
+  "homepage": "https://github.com/Anushree93/namaste-foodApp#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.10.2",
+    "process": "^0.11.10"
+  }
+}
