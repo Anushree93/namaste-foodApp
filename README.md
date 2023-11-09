@@ -59,3 +59,87 @@ what is caret and tilde?
 - ^1.2.3 will update you to all future minor/patch version without incrementing a major.^1.2.3 will use releases from 1.2.3 to <2.0.0.
 
 ---------------------------EPISODE 3--------------------------
+
+what is JSX?
+- Javascript stands for js xml.
+- it allows us to write html in react.
+- JSX lets you write HTML-like markup inside a JavaScript file, keeping rendering logic and content in the same place. Sometimes you will want to add a little JavaScript logic or reference a dynamic property inside that markup. In this situation, you can use curly braces in your JSX to open a window to JavaScript.
+- JSX makes it easier to write and add HTML in React.
+- JSX is a syntax extension for JavaScript that lets you write HTML-like markup inside a JavaScript file
+
+what is React.createElement Vs JSX?
+- 
+
+Benefits of JSX
+-JSX allows us to write HTML elements in JavaScript and place them in the DOM without any createElement() and/or appendChild() methods.
+- JSX converts HTML tags into react elements. 
+- You are not required to use JSX, but JSX makes it easier to write React applications.
+
+how JSX works?
+- lets assume we have a header component with some set of props.
+- bahind the scenes, react is going to call the method React.createElement() method.
+
+What is the use of Babel in React?
+- Babel is a JavaScript compiler that converts modern JavaScript code into a version compatible with all browsers. Babel enables React developers to use the latest JavaScript syntax in their components. Babel transpiles modern JavaScript for use in React components and all browsers.
+- Babel is a toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments. 
+Here are the main things Babel can do for you:
+- Transform syntax
+Polyfill features that are missing in your target environment (through a third-party polyfill such as core-js)
+Source code transformations (codemods)
+
+What is the use of parcel in React?
+- 
+
+what is the role of type attribute in script tag?
+- The type attribute specifies the type of the script.
+- The type attribute identifies the content between the <script> and </script> tags.
+- async - For classic scripts, if the async attribute is present, then the classic script will be fetched in parallel to parsing and evaluated as soon as it is available.
+- For module scripts, if the async attribute is present then the scripts and all their dependencies will be fetched in parallel to parsing and evaluated as soon as they are available.
+defer
+- defer - This Boolean attribute is set to indicate to a browser that the script is meant to be executed after the document has been parsed, but before firing DOMContentLoaded.
+- Scripts with the defer attribute will prevent the DOMContentLoaded event from firing until the script has loaded and finished evaluating
+
+---------------------------------------EPISODE 4--------------------------------------------
+
+Is JSX mandatory for react?
+- JSX is not a requirement for using React. Using React without JSX is especially convenient when you don't want to set up compilation in your build environment. Each JSX element is just syntactic sugar for calling React.
+
+Is ES6 mandatory for react?
+- React uses ES6, and you should be familiar with some of the new features like: Classes. Arrow Functions. Variables (let, const, var)
+- Normally you would define a React component as a plain JavaScript class: If you don't use ES6 yet, you may use the create-react-class module instead: The API of ES6 classes is similar to createReactClass() with a few exceptions.
+
+how to write comments in JSX?
+-  {/* this is a comment */}
+
+what is <React.Fragment></React.Fragment> and <></>?
+- react.fragment will allow you to return multiple elements of (list of child elements) without having to wrap it in extra node in the DOM.
+- so we dont need to deal with extra node.
+- If you want to pass key to a Fragment, you can't use the <>...</> syntax. You have to explicitly import Fragment from 'react' and render <Fragment key={yourKey}>...</Fragment>.
+
+what is virtual DOM?
+- The virtual DOM (VDOM) is a programming concept where an ideal, or “virtual”, representation of a UI is kept in memory and synced with the “real” DOM by a library such as ReactDOM. This process is called reconciliation.
+- This approach enables the declarative API of React: You tell React what state you want the UI to be in, and it makes sure the DOM matches that state. 
+- This abstracts out the attribute manipulation, event handling, and manual DOM updating that you would otherwise have to use to build your app.
+
+what is reconciliation process of virtual DOM?
+- React Reconciliation is the process through which React updates the Browser DOM. It makes the DOM updates faster in React. It updates the virtual DOM first and then uses the diffing algorithm to make efficient and optimized updates in the Real DOM
+- The diffing algorithm in React allows for the efficient updates and rendering of these DOM elements. As changes occur within the application's state or properties, React uses its diff algorithm to compare the new Virtual DOM with the old one.
+
+what is react fibre architecture?
+-React Fiber is an ongoing reimplementation of React's core algorithm. It is the culmination of over two years of research by the React team.
+- The goal of React Fiber is to increase its suitability for areas like animation, layout, and gestures. Its headline feature is incremental rendering: the ability to split rendering work into chunks and spread it out over multiple frames.
+
+why we need keys in react ?
+- A “key” is a special string attribute you need to include when creating lists of elements in React. Keys are used in React to identify which items in the list are changed, updated, or deleted. Keys are used to give an identity to the elements in the lists
+
+when do we need keys in react?
+- In this example, the ItemList component is rendered with an initial set of items. Then we add and remove items from the list. However, because no keys have been provided, React is forced to re-render the entire list on each change, even if only one item has been added or removed. It can lead to a poor user experience
+
+Can we use index as key in react?
+- It is not recommended to use the index of the array as the key prop if you know the array will not be static. If the key is an index, reordering an item in the array changes it. Then React will get confused and re-render the incorrect element
+
+what are props in react?
+- React components use props to communicate with each other. Every parent component can pass some information to its child components by giving them props. Props might remind you of HTML attributes, but you can pass any JavaScript value through them, including objects, arrays, and functions.
+
+what is config driven UI?
+- Config-driven UI is a technique that allows you to create user interfaces based on a configuration file, such as JSON, or a TypeScript file that defines the layout and content of the UI components. This can be useful for creating dynamic and customizable UIs without hard coding them.
