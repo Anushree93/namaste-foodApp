@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { APPLOGO, LOGIN } from "../utils/constant";
 
 const Header = () => {
+    const [loginBtn, setLoginBtn] = useState("Login");
     return (
         <div className="header">
             <div>
@@ -12,7 +14,11 @@ const Header = () => {
                     <li>About</li>
                     <li>Careers</li>
                     <li>Cart</li>
-                    <li><img className="login-btn" src={LOGIN}/></li>
+                    <li className="login-btn" onClick={
+                        ()=>
+                        {
+                            loginBtn ==='Login'? setLoginBtn('Logout'):setLoginBtn("Login");
+                        }}>{loginBtn}</li>
                 </ul>
             </div>
         </div>
