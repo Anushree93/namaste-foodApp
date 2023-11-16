@@ -143,3 +143,25 @@ what are props in react?
 
 what is config driven UI?
 - Config-driven UI is a technique that allows you to create user interfaces based on a configuration file, such as JSON, or a TypeScript file that defines the layout and content of the UI components. This can be useful for creating dynamic and customizable UIs without hard coding them.
+
+---------------------------EPISODE 5------------------------------------------------
+
+what is named export , default export and * as export?
+- When you write a default import, you can put any name you want after import . For example, you could write import Banana from './Button.js' instead and it would still provide you with the same default export. 
+- In contrast, with named imports, the name has to match on both sides. That's why they are called named imports!
+- Named exports are useful to export several values. During the import, one will be able to use the same name to refer to the corresponding value. 
+- Concerning the default export, there is only a single default export per module. A default export can be a function, a class, an object or anything else.
+
+what is the importance of config.js file?
+- Config. js allows developers to configure their applications in an XML block instead of hard-coding values inside their scripts or in JSON objects. 
+- The XML can be embedded inside an HTML document or in a separate XML file. The configuration block may contain strings, numbers, arrays and HTML.
+
+what is react useState hooks?
+- useState is React Hook that allows you to add state to a functional component. It returns an array with two values: the current state and a function to update it. The Hook takes an initial state value as an argument and returns an updated state value whenever the setter function is called.
+-The useState Hook can be used to keep track of strings, numbers, booleans, arrays, objects, and any combination of these! We could create multiple state Hooks to track individual values.
+
+What is the difference between useState and useEffect hook in React?
+- In summary, useState is used to manage state within a component, allowing you to store and update data.
+- useEffect is used to perform side effects in a component, such as updating the document title, fetching data, or subscribing to events.
+
+what is optional chaining?

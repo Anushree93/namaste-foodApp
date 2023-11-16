@@ -1,5 +1,17 @@
-.child1{
-    color: brown;
+.header{
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    border: 1px solid black
+}
+
+.nav-header{
+    display: flex;
+    align-items: center;
+}
+
+.search-input{
+    margin: 2px 2px 0 2px;
 }
 
 .food-app-logo {
@@ -8,8 +20,9 @@
 }
 
 .login-btn{
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
 }
 
 input[type="text"]{
@@ -30,7 +43,7 @@ ul>li{
 }
 
 .food-app-logo-container{
-    width: 300px;
+    width: 200px;
 }
 .header-nav{
     display: flex;
@@ -48,6 +61,11 @@ ul>li{
 
 .body-container{
     border: 1px solid black;
+}
+
+.body-search-container {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .restro-food-logo{
@@ -75,10 +93,58 @@ ul>li{
 .restro-card{
     margin:5px;
     width: 200px;
+    cursor: pointer;
     margin-left: auto;
     margin-right: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 15px;
 }
 
 .cuisines{
     text-wrap: wrap;
+}
+
+.top-rated-btn{
+    cursor: pointer;
+}
+
+.shimmer-card{
+    margin: 25px 0px 0px 5px;
+    height: 200px;
+    width: 200px;
+    background-color: #eeeee4;
+}
+
+.shimmer-detail1{
+    margin: 5px 0px 5px 5px;
+    height: 10px;
+    width: 150px;
+    background-color: #eeeee4;
+}
+
+.shimmer-detail2{
+    margin: 5px 0px 5px 5px;
+    height: 10px;
+    width: 100px;
+    background-color: #eeeee4;
+}
+
+.shimmer-detail3{
+    margin: 5px 0px 5px 5px;
+    height: 10px;
+    width: 100px;
+    background-color: #eeeee4;
+}
+
+.shimmer-detail4{
+    margin: 5px 0px 5px 5px;
+    height: 10px;
+    width: 100px;
+    background-color: #eeeee4;
+}
+
+.shimmer-ui-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
