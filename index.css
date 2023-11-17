@@ -9,6 +9,7 @@
     display: flex;
     margin-top:34px;
     align-items: center;
+    list-style: none;
 }
 
 .search-input{
@@ -20,7 +21,7 @@
     height: 100px;
 }
 
-.login-btn{
+.login-btn,.cart,.careers,.home,.about{
     cursor: pointer;
 }
 
@@ -33,7 +34,7 @@ input[type="text"]{
     align-items: center;
 }
 
-ul>li{
+.home, .careers, .about, .cart, .login-btn{
    list-style-type: none; 
    justify-content: space-between;
    margin: 0px 20px;
