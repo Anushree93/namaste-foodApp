@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Careers from "./components/Careers";
 import Cart from "./components/Cart";
+import ErrorComponent from "./components/ErrorComponent";
 
 const FoodApp = () => {
   return (
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <FoodApp />,
+    errorElement: <ErrorComponent/>
   },
   {
     path: "/home",
