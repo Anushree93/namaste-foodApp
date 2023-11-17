@@ -2,12 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import BodyComp from "./components/BodyComp";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Home from "./components/Home";
 import About from "./components/About";
 import Careers from "./components/Careers";
 import Cart from "./components/Cart";
 import ErrorComponent from "./components/ErrorComponent";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 const FoodApp = () => {
   return (
