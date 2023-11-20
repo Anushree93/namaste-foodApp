@@ -7,6 +7,7 @@ import About from "./components/About";
 import Careers from "./components/Careers";
 import Cart from "./components/Cart";
 import ErrorComponent from "./components/ErrorComponent";
+import RestroInfo from "./components/RestroInfo";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 const FoodApp = () => {
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/home",
-        element: <Home />,
+        element: <BodyComp />,
       },
       {
         path: "/about",
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
         path: "/cart",
         element: <Cart />,
       },
+      {
+        path:"/restaurant/:resId",
+        element: <RestroInfo/>
+      }
     ],
     errorElement: <ErrorComponent />,
   },
