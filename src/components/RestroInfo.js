@@ -73,7 +73,7 @@ const RestroInfo = () =>{
         </div>
         </div>
         <div className="menuInfo">
-            {
+                {
                 resInfo[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.map(
                     (card) =>!((card?.card?.card?.title) && (card?.card?.card?.itemCards?.length>0))?<div></div> : <div className="menu-name" key={card?.card?.card?.title}>
                         <div className="title">{card?.card?.card?.title}({card?.card?.card?.itemCards?.length})</div>
