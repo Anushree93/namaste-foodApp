@@ -165,3 +165,38 @@ What is the difference between useState and useEffect hook in React?
 - useEffect is used to perform side effects in a component, such as updating the document title, fetching data, or subscribing to events.
 
 what is optional chaining?
+- The optional chaining (?.) operator accesses an object's property or calls a function. If the object accessed or function called using this operator is undefined or null, the expression short circuits and evaluates to undefined instead of throwing an error.
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------
+install @reduxjs/toolkit
+install react-redux
+configure store() - rkt
+import provider from react-redux
+wrap the app in provider component passing in store={appStore} as prop
+now make cartslice.js => createSlice({}) from rkt
+ - it has name="cart",
+ initialState = {
+    items:[]
+ }
+ reducers= {
+    addItem : (state, action) =>{
+        state.items.push
+    }
+    removeItem : (state) =>{
+        state.items.pop();
+    }
+    clearCart : () =>{
+        state.items.length = 0;
+    }
+ }
+
+- go in congigureStore({
+    reducer:{
+    cart: cartReducer,
+    }
+})

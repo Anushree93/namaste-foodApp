@@ -15,28 +15,30 @@ const RestroInfo = () =>{
     // useEffect hooks takes 2 parameters- 1 is the callback arrow function and 2nd is the dependency array
     // if the array is blank, is will call this callback function only once and renders comp once after the call
     // if the array is any variable, it will call callback function every time variable changes and rerenders the comp
-    //
+    // if you pass no dependency array at all, your Effect runs after every single render (and re-render) of your component.
     useEffect(()=>{
         fetchRestroData();
     }, []);
 
     const fetchRestroData = async () =>{
-        const data = await fetch(RESTAURANT_URL+resId);
+        const data = await fetch(RESTAURANT_URL + resId);
         const json = await data.json();
         setResInfo(json?.data?.cards);
         console.log(json?.data?.cards);
     }
 
+    
+
     return (
     <div className="restro-details-container">
         <div className="resInfo">
-            <div className="res-name">{resInfo[0]?.card?.card?.info?.name}</div>
+              <div className="res-name">{resInfo[0]?.card?.card?.info?.name}</div>
             <div className="res-header">
-            <div>
-            <div className="cuisines">{resInfo[0]?.card?.card?.info?.cuisines.join(", ")}</div>
-            <div className="costfortwo">{resInfo[0]?.card?.card?.info?.costForTwoMessage}</div>
-            <div className="area">{resInfo[0]?.card?.card?.info?.areaName}</div>
-            </div>
+        <div>
+        <div className="cuisines">{resInfo[0]?.card?.card?.info?.cuisines.join(", ")}</div>
+        <div className="costfortwo">{resInfo[0]?.card?.card?.info?.costForTwoMessage}</div>
+        <div className="area">{resInfo[0]?.card?.card?.info?.areaName}</div>
+    </div>
             <div>
             <div className="rating-header">
                 <div className="rating">
@@ -67,7 +69,12 @@ const RestroInfo = () =>{
             <div className="label-veg">Veg Only</div>
             <div>
         <label className="switch">
-         <input type="checkbox"/>
+         <input type="checkbox" onChange={()=>{
+            const filteredList = resInfo[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(card=>{
+                card?.card?.card?.itemCards?.filter(ic => {ic?.card?.info?.itemAttribute.vegClassifier ==='NONVEG'})
+            });
+            console.log(filteredList);
+         }}/>
          <span className="slider round"></span>
         </label>
         </div>
@@ -83,6 +90,7 @@ const RestroInfo = () =>{
                             <div>
                                 <div>{menu?.card?.info?.name}</div>
                                 <div>Rs.{menu?.card?.info?.price/100}</div>
+                                <div>{menu?.card?.info?.itemAttribute?.vegClassifier}</div>
                             </div>
                             <div className="menu-image-container">
                                 <img className="menu-image" src={IMAGE_URL + menu?.card?.info?.imageId} />

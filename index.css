@@ -17,6 +17,10 @@ a:-webkit-any-link {
     list-style: none;
 }
 
+.fixImg{
+    position: fixed;
+}
+
 .search-input{
     margin: 2px 2px 0 2px;
 }

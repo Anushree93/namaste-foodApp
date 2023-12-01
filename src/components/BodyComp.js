@@ -53,7 +53,7 @@ const Body = () => {
               )
             );
           }}
-        >
+          >
           Search
         </button>
       </div>
