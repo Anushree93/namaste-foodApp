@@ -1,17 +1,25 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
-const AboutCard = (props) => {
-    const [count,setCount] = useState(0);
-    const { name , lastname, place} = props;
+class AboutCard extends React.Component{
+    constructor (props){
+        super(props)
+        console.log('constructor of '+this.props.name);
+        this.state={
+            counter:0
+        }
+    }
 
-    return (<div>
-        <h1>this is about card : {name}</h1>
-        <h2>this is about card : {lastname}</h2>
-        <h3>this is about from : {place}</h3>
-        <h4>counter:{count}</h4>
-        <button onClick={()=>{setCount(count+1);}}>Increment</button>
-        <button onClick={()=>{setCount(count-1);}}>Decrement</button>
-    </div>)
+    componentDidMount(){
+        console.log('componentDidMount of '+this.props.name);
+    }
+
+    render(){
+        console.log('render of '+this.props.name);
+        <div>
+            <button>{this.state.counter}</button>
+            <button onClick={()=>{console.log(this.setState(counter=this.state.counter+1))}}>Increment</button>
+        </div>
+    }
 }
 
 export default AboutCard

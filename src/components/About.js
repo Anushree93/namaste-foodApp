@@ -1,4 +1,6 @@
 import React from "react";
+import AboutClass from "../components/AboutClass";
+import AboutCard from "./AboutCard";
 
 class About extends React.Component{
   constructor(props){
@@ -10,6 +12,7 @@ class About extends React.Component{
          html_url: 'c'
       }
     }
+    //console.log('constructor of parent');
   }
 
   async componentDidMount(){
@@ -19,17 +22,23 @@ class About extends React.Component{
     this.setState({
         userInfo:json
     })
-    console.log(json);
-
+    //console.log('componentDidMount of parent');
   }
 
   render(){
-    return(<div>
+    console.log('render of parent');
+    return(
+    <div>
       <img className="fixImg" src={this.state.userInfo.avatar_url}/>
       <h1>Username: {this.state.userInfo.login}</h1>
       <h1>URL: {this.state.userInfo.html_url}</h1>
       <h1>Location : {this.state.userInfo.location}</h1>
-      </div>)
+      </div>
+    // <div>
+    // <AboutClass name={'child1'}/>
+    // <AboutCard name={'child2'}/>
+    // </div>
+    )
   }
 }
 

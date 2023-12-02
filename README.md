@@ -167,6 +167,133 @@ What is the difference between useState and useEffect hook in React?
 what is optional chaining?
 - The optional chaining (?.) operator accesses an object's property or calls a function. If the object accessed or function called using this operator is undefined or null, the expression short circuits and evaluates to undefined instead of throwing an error.
 
+---------------------------EPISODE 6------------------------------------------------
+
+what is micro service?
+- microservices represents a service oriented architecture where each microservice is being assigned a seperate task and expertise in that.
+- group of all microservices forms a whole application thus giving its best efficiency.
+- each microservice has to seperate task and can be deployed independently.
+
+what is monolith architecture?
+- A monolithic architecture is a traditional model of a software program, which is built as a unified unit that is self-contained and independent from other applications. 
+- The word “monolith” is often attributed to something large and glacial, which isn't far from the truth of a monolith architecture for software design. 
+
+what is difference between monolithic and microservice architecture?
+- A monolithic application is built as a single unified unit while a microservices architecture is a collection of smaller, independently deployable services.
+
+why do we need useEffect hook?
+- by using this hook, we tell react to do a specific task after our components renders
+- react wil remember this function and calls it once DOM is rendered on UI
+- to get subscribed to events, fetch API data.
+
+what is Shimmer UI?
+- to give an user a experience of something is going to be load on the UI
+- showing dummy container to hightlight
+
+whta is JS expression and JS statement?
+- At a high level, an expression is a valid unit of code that resolves to a value.
+
+what is conditional rendering?
+- In React, conditional rendering is the process of displaying different content based on certain conditions or states. It allows you to create dynamic user interfaces that can adapt to changes in data and user interactions. In this process, you can use conditional statements to decide what content should be rendered.
+e.g. if I am loading an data, till the time data loads I can show loading screen and then the actual screen once data is loaded.
+
+what is CORS?
+- cross origin resource sharing
+- Cross-origin resource sharing (CORS) is a browser security feature that restricts cross-origin HTTP requests that are initiated from scripts running in the browser.
+- If you cannot access your API and receive an error message that contains Cross-Origin Request Blocked , you might need to enable CORS. CORS is typically required to build web applications that access APIs hosted on a different domain or origin. 
+
+what is async and await?
+- Inside an async function, you can use the await keyword before a call to a function that returns a promise. This makes the code wait at that point until the promise is settled, at which point the fulfilled value of the promise is treated as a return value, or the rejected value is thrown.
+
+
+---------------------------EPISODE 7------------------------------------------------
+
+what is console.log(useState())
+- gives array of 2 
+
+useEffect 3 cases of second parameter
+- 1. if deepndency array is give, after initial render, it will effect on change of dependency array.
+- 2. if array is [], after initial render,it will effect only once.
+- 3. if paramter is not passed, it will effect on each render and rerender of comp
+
+what is SPA 
+- An SPA (Single-page application) is a web app implementation that loads only a single web document, and then updates the body content of that single document via JavaScript APIs 
+
+what is client side routing and server side routing?
+- client side routing - routing on web app without interaction with server.
+- for spa, we can update the url for each module and load a specific UI without having to make an API call to server
+- Server side routing - will make a call to server and navigation to new html doc
+
+---------------------------------------------------EPISODE 8------------------------------------------------------------
+
+How do you create Nested routes create
+-
+
+Read about createHashRouter, createMemoryRouter
+- createHashRouter - creates hash url of your application url.it is used if you are unable to redirect all your traffic to application url
+- createMemoryRouter - Instead of using the browser's history, a memory router manages its own history stack in memory. It's primarily useful for testing and component development tools like Storybook, but can also be used for running React Router in any non-browser environment.
+
+what is lifecycle methods in react class based components -
+- Mounting phase lifecycle method flows 
+- constructor
+- static getDerivedStateFromProps()
+- render()
+- componentDidMount()
+
+if it is <Parent> 
+            <Child1/>
+            <Child2/>
+         </Parent>
+
+- It would call 
+constructor of parent
+render of parent
+constructor of child1
+render of child1
+constructor of child2
+render of child2
+componentDidMount of child1
+componentDidMount of child2
+componentDidMount of parent
+
+-Updating phase lifecycle method
+- static getDerivedStateFromProps()
+- shouldComponentUpdate()
+- render()
+- getSnapshotBeforeUpdate()
+- componentDidUpdate()
+
+why do we need componentDidMount()?
+- it is the last step while mounting a component in react life cycle.
+- using this method we can use react code when compoent has already been mounted to DOM
+- It is used for handling all API calls and setting up to subscriptions. 
+
+why do we need componentWillUnmount()?
+- componentWillUnmount() is invoked immediately before a component is unmounted and destroyed. 
+- Perform any necessary cleanup in this method, such as invalidating timers, canceling network requests, or cleaning up any subscriptions that were created in componentDidMount().
+
+why do we use super(props) in constructor?
+- so we need super() class in constructor to call the constructor of parent class
+- here the parent class is React.Component
+- if we need access to 'this' keyword in constructor, we need to call super method. 
+
+--------------------------------------------------- EPISODE 9 ------------------------------------------------------------
+
+when and why do we need Lazy()?
+- when do we need it - is when we need to load a specific part of application on demand or if user clicks on it instead of loading all at once to reduce initial load time.
+- Lazy loading is one the good way to make app efficient and load quickly
+- it allows us to split the code
+- The React.lazy() function allows you to render a dynamic import as a normal component. It makes it simple to construct components that are loaded dynamically yet rendered as regular components.
+
+what is suspense?
+- it is a feature that manages asynchronous operations in a react app.
+- it will ask you to 'wait' to get render on UI.
+- It lets your component communicate to react that they are waiting for some data.
+- suspense can have fallback component while it loads/fails to load.
+
+advantages and disadvantages of code splitting pattern?
+- 
+
 
 
 

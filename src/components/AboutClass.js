@@ -3,14 +3,17 @@ import React from "react";
 class AboutClass extends React.Component{
    constructor(props){
     super(props);
+
+    console.log('constructor of '+this.props.name);
+   }
+
+   componentDidMount(){
+    console.log('componentDidMount of '+this.props.name);
    }
 
    render(){
-    const {name, html_url,login} = this.props;
+    console.log('render of '+this.props.name);
     return (<div>
-        <h1> Name:  {name}</h1>
-        <h1> Login: {login}</h1>
-        <h1> URL:  {html_url}</h1>
     </div>)
    }
 }
