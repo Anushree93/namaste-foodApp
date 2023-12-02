@@ -291,8 +291,51 @@ what is suspense?
 - It lets your component communicate to react that they are waiting for some data.
 - suspense can have fallback component while it loads/fails to load.
 
-advantages and disadvantages of code splitting pattern?
-- 
+diffrenet names of it - 
+- code splitting
+- code chunking
+- lazy loading
+- dynamic bundling
+- on demand loading
+
+--------------------------------------------------- EPISODE 10 ------------------------------------------------------------
+
+expolore all the ways of writing CSS
+- traditional way of using index.css 
+- bootstrap
+- tailwind
+- chakra UI
+
+how to configure tailwindcss
+- install 'npm install -D tailwindcss postcss'
+- now to initialize and to create 'tailwind.config.js' -> npx tailwindcss init
+- now create .postcssrc file with following code.
+- add content in tailwind.config.js file
+- Add the Tailwind directives to your CSS
+
+what is postcss?
+- PostCSS is a tool for transforming styles with JS plugins. 
+- These plugins can lint your CSS, support variables and mixins, transpile future CSS syntax, inline images, and more.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
