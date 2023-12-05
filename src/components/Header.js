@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { APPLOGO, LOGIN } from "../utils/constant";
 import { Link } from "react-router-dom";
+import UserContext from '../utils/UserContext';
 
 const Header = () => {
+  const { userName } = useContext(UserContext);
   const [loginBtn, setLoginBtn] = useState("Login");
   return (
     <div className="header">
@@ -25,6 +27,7 @@ const Header = () => {
           >
             {loginBtn}
           </li>
+          <li>{userName}</li>
         </ul>
       </div>
     </div>

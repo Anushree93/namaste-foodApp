@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import BodyComp from "./components/BodyComp";
@@ -7,17 +7,32 @@ import Cart from "./components/Cart";
 import ErrorComponent from "./components/ErrorComponent";
 import RestroInfo from "./components/RestroInfo";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import UserContext from "./utils/UserContext";
+import About from "./components/About";
 
 const FoodApp = () => {
+  const [userInfo, setUserInfo] = useState();
+
+  useEffect(()=>{
+  //API
+    const data = {
+      name : 'Anushree'
+    }
+    setUserInfo(data.name);
+  },[]);
+
+
   return (
-    <div>
+    <UserContext.Provider value={{userName: userInfo, setUserInfo}}>
+     <div>
       <Header />
       <Outlet />
-    </div>
+     </div>
+    </UserContext.Provider>
   );
 };
 
-const lazyLoadedComp = React.lazy(()=>import('./components/About'));
+//const lazyLoadedComp = React.lazy(()=>import('./components/About'));
 
 const router = createBrowserRouter([
   {
@@ -34,7 +49,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <Suspense >{lazyLoadedComp}</Suspense>,
+        //element: <Suspense >{lazyLoadedComp}</Suspense>,
+        element: <About/>
       },
       {
         path: "/careers",

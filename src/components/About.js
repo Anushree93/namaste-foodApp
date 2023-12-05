@@ -1,6 +1,5 @@
 import React from "react";
-import AboutClass from "../components/AboutClass";
-import AboutCard from "./AboutCard";
+import UserContext from "../utils/UserContext";
 
 class About extends React.Component{
   constructor(props){
@@ -29,15 +28,16 @@ class About extends React.Component{
     console.log('render of parent');
     return(
     <div>
-      <img className="fixImg" src={this.state.userInfo.avatar_url}/>
+      <img src={this.state.userInfo.avatar_url}/>
       <h1>Username: {this.state.userInfo.login}</h1>
+      <UserContext.Consumer>
+       {
+        ({userName})=><h1>{userName}</h1>
+       }
+      </UserContext.Consumer>
       <h1>URL: {this.state.userInfo.html_url}</h1>
       <h1>Location : {this.state.userInfo.location}</h1>
       </div>
-    // <div>
-    // <AboutClass name={'child1'}/>
-    // <AboutCard name={'child2'}/>
-    // </div>
     )
   }
 }

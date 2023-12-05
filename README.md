@@ -317,6 +317,20 @@ what is postcss?
 - PostCSS is a tool for transforming styles with JS plugins. 
 - These plugins can lint your CSS, support variables and mixins, transpile future CSS syntax, inline images, and more.
 
+--------------------------------------------------- EPISODE 10 ------------------------------------------------------------
+
+what is propdrilling?
+- is a way of passing a prop from a parent to a very deep hierarchy children component.
+- Prop drilling occurs when a parent component has to pass down as props to its children components that do not consume the props 
+- instead, they only pass it down to another component that finally consumes it.
+- For example, if the component hierarchy is too deep, prop drilling can lead to long chains of nested components that pass data down through multiple levels of nesting.
+
+what is lifting state up?
+- Sometimes, you want the state of two components to always change together. To do it, remove state from both of them, move it to their closest common parent, and then pass it down to them via props. This is known as lifting state up
+
+what are context provider and context consumer?
+- The provider is responsible for creating and managing the context, which holds the data to be shared between components.
+- On the other hand, the consumer is used to access the context and its data from within a component.
 
 
 

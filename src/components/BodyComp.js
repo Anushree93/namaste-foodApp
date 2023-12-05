@@ -1,12 +1,14 @@
 import RestroCard from "./Restrocard";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ShimmerUI from "./ShimmerUI";
 import { Link } from "react-router-dom";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [restrolist, setrestrolist] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
   const [searchBy, setSearchBy] = useState("");
+  const { userName, setUserInfo } = useContext(UserContext);
 
   useEffect(() => {
     fetchData();
@@ -56,7 +58,9 @@ const Body = () => {
           >
           Search
         </button>
+        <input type="text" value={userName} onChange={(e)=>{setUserInfo(e.target.value)}}/>
       </div>
+      
       <div className="restro-container">
         {filteredList.map((restro) => (
           <Link to={"/restaurant/"+restro.info.id} key={restro.info.id}><RestroCard restroObj={restro} /></Link>
