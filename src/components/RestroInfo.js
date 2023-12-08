@@ -1,6 +1,8 @@
 import { RATINGLOGO, IMAGE_URL } from "../utils/constant";
 import { useParams } from "react-router-dom";
-import useRestaurantMenu from '../utils/useRestaurantMenu'
+import useRestaurantMenu from '../utils/useRestaurantMenu';
+import { useDispatch } from "react-redux";
+import {addItem} from '../utils/cartSlice';
 
 const RestroInfo = () =>{
     
@@ -8,7 +10,13 @@ const RestroInfo = () =>{
     const {resId} = useParams();
 
     const resInfo = useRestaurantMenu(resId);
+
+    const dispatch = useDispatch();
     
+    const onAddHandler = (item) => {
+       dispatch(addItem(item));
+    }
+
     return (
     <div className="restro-details-container">
         <div className="resInfo">
@@ -62,7 +70,8 @@ const RestroInfo = () =>{
         <div className="menuInfo">
                 {
                 resInfo[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.map(
-                    (card) =>!((card?.card?.card?.title) && (card?.card?.card?.itemCards?.length>0))?<div></div> : <div className="menu-name" key={card?.card?.card?.title}>
+                    (card) =>!((card?.card?.card?.title) && (card?.card?.card?.itemCards?.length>0))?<div></div> : 
+                    <div className="menu-name" key={card?.card?.card?.title}>
                         <div className="title">{card?.card?.card?.title}({card?.card?.card?.itemCards?.length})</div>
                         {card?.card?.card?.itemCards?.map(
                         (menu)=>(
@@ -73,9 +82,17 @@ const RestroInfo = () =>{
                                 <div>{menu?.card?.info?.itemAttribute?.vegClassifier}</div>
                             </div>
                             <div className="menu-image-container">
+                                <div>
+                                <button className="menu-addBtn" onClick={()=>onAddHandler(menu?.card?.info)}>Add+</button>
+                                </div>
+                                <div>
                                 <img className="menu-image" src={IMAGE_URL + menu?.card?.info?.imageId} />
+                                </div>
+                                
                             </div>
+                           
                         </div>
+                        
                         )
                         )
                     }

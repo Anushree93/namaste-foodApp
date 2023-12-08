@@ -77,6 +77,59 @@ input[type="text"]{
     flex-wrap: wrap;
 }
 
+.item-name{
+    align-content: left;
+    width: 25%
+}
+
+.item-price{
+    align-content: left;
+    width: 10%
+}
+
+.clear-cart{
+    width:60%;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.cart{
+    align-self: center;
+    margin: 0 auto;
+}
+.clear-cart-btn{
+    margin: 0 auto;
+}
+
+.menu-addBtn{
+    margin: 0 25px 0 15px;
+    height: 20px;
+    width: 40px;
+    border: box black solid;
+    background-color: green;
+    padding: 1px;
+    color:#eeeee4;
+    cursor: pointer;
+}
+
+.cart-btn{
+    margin: 18px 0 18px 0;
+    cursor: pointer;
+}
+
+.cart-total{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cart-items{
+    margin: 0 auto;
+    width : 60%;
+    display: flex;
+    flex-wrap: wrap;
+     justify-content: space-between; 
+}
+
 .restro-food-logo{
     width: 200px;
     height: 200px;
@@ -168,12 +221,8 @@ input[type="text"]{
 
 .menu-image{
     width: 90px;
-    height: 90px;
+    height: 80px;
 }
-
-/* .menu-image-container{
-    float: right;
-} */
 
 .menu{
     flex-wrap: wrap;

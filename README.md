@@ -357,6 +357,15 @@ what are context provider and context consumer?
 
 
 -----------------------------------------------------------------------------------------------------------------
+
+Redux offeres 2 libraries that we are going to use - 
+react- redux - package which is used as a bridge between react application and redux library
+redux tool kit - package which offers us a set of intended way of writing redux logic which basically helps us to address 3 issues we had with redux previously
+ 1. configuring redux store was too complicated
+ 2. use of too much boilerplate code
+ 3. I had to add lot of redux packages to do anything useful with redux
+
+
 install @reduxjs/toolkit
 install react-redux
 configure store() - rkt
@@ -384,3 +393,77 @@ now make cartslice.js => createSlice({}) from rkt
     cart: cartReducer,
     }
 })
+
+- to read the value from store, use useSelector
+const { cartItems } = useSelector((store)=> {return store.cart.items});
+
+- to dispatch any action.
+- use useDispatch hook from react-redux
+- const dipatch = useDispatch();
+- dipatch(addItem("pizza"));
+
+
+------------------------------------------------- EPISODE 13---------------------------------------------------------------
+
+there are 3 types of testing 
+- unit testing
+- integration testing
+- end to end testing 
+
+
+react testing library comes readymade with 'create-react-app'
+react testing library is build on top of DOM testing library.
+Jest is a JS test framework
+
+RTL uses jest
+jest uses babel
+
+- install RTL 
+  npm install -D @testing-library/react
+
+- install jest
+  npm install -D jest
+
+- go to jest website and see for the ' using babel' dependencies
+- configure babel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------
+JS 
+
+whats difference between arrow function and JS functions?
+- arguments cannot be called in arrow functions
+function print() {
+  console.log(arguments)
+}
+const print = () => {
+  console.log(arguments)
+} 
+// Uncaught ReferenceError: arguments is not defined
+
+
+- arrow functions cannot be called as constructors with new keyword
+   const car = new Car();
+
+- arrow functions do not create this binding.
+- 

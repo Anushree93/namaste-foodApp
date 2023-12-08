@@ -6,9 +6,11 @@ import Careers from "./components/Careers";
 import Cart from "./components/Cart";
 import ErrorComponent from "./components/ErrorComponent";
 import RestroInfo from "./components/RestroInfo";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import UserContext from "./utils/UserContext";
 import About from "./components/About";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { Provider } from "react-redux";
+import foodStore from "./utils/foodStore";
 
 const FoodApp = () => {
   const [userInfo, setUserInfo] = useState();
@@ -23,12 +25,14 @@ const FoodApp = () => {
 
 
   return (
+    <Provider store={foodStore}>
     <UserContext.Provider value={{userName: userInfo, setUserInfo}}>
      <div>
       <Header />
       <Outlet />
      </div>
     </UserContext.Provider>
+    </Provider>
   );
 };
 
