@@ -427,6 +427,28 @@ jest uses babel
 - go to jest website and see for the ' using babel' dependencies
 - configure babel
 
+now our parcel internally uses babel which has its own config somewhere in our project
+- but here we are setting another config for babel
+- so to override the config setup by parcel, we uses .parcelrc file
+
+do npm run test
+
+- now to configure jest
+  npx jest --init
+- jest.config.js file would be created
+
+now install jsdom library
+- npm install --save-dev jest-environment-jsdom
+
+now run 
+- npm run test to check if configurations are done properly.it will show no test found.
+
+-now with render, install @babel/preset-react again and add it in babel config.
+
+-to access screen object methods for assertion
+-install @testing-library/jest-dom
+
+
 
 
 
