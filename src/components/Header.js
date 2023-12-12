@@ -10,7 +10,6 @@ const Header = () => {
   const cartItems = useSelector((store)=> {
     return store.cart.items;
   });
-  console.log(cartItems);
 
   return (
     <div className="header">
@@ -23,7 +22,7 @@ const Header = () => {
           <Link to="/about" className="about"><li>About</li></Link>
           <Link to="/careers" className="careers"><li>Careers</li></Link>
           <Link to="/cart" className="cart"><li>Cart: {cartItems.length} </li></Link>
-          <li
+          <button
             className="login-btn"
             onClick={() => {
               loginBtn === "Login"
@@ -32,7 +31,7 @@ const Header = () => {
             }}
           >
             {loginBtn}
-          </li>
+            </button>
           <li>{userName}</li>
         </ul>
       </div>
